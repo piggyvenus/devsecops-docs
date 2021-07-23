@@ -16,17 +16,17 @@ A number of tools have been installed and pre-configured to support the DevSecOp
 
 DevSecOps CICD pipeline demo using several technologies such as:
 
-- [Openshift Pipelines](https://www.openshift.com/learn/topics/ci-cd)
-- [Openshift GitOps](https://www.openshift.com/blog/announcing-openshift-gitops)
-- [Openshift Advanced Cluster Security for Kubernetes](https://www.redhat.com/en/resources/advanced-cluster-security-for-kubernetes-datasheet)
-- [Openshift Container Registry](https://docs.openshift.com/container-platform/latest/registry/architecture-component-imageregistry.html)
-- [SonarQube](https://www.sonarqube.org/)
-- [Nexus](https://www.sonatype.com/products/repository-oss?topnav=true)
-- [JUnit](https://junit.org/junit5/)
-- [Gogs](https://gogs.io/)
-- [Git Webhook](https://tekton.dev/docs/triggers/)
-- [Gatling](https://gatling.io/)
-- [Zap Proxy](https://www.zaproxy.org/)
+- link:https://www.openshift.com/learn/topics/ci-cd[Openshift Pipelines]
+- link:https://www.openshift.com/blog/announcing-openshift-gitops[Openshift GitOps]
+- link:https://www.redhat.com/en/resources/advanced-cluster-security-for-kubernetes-datasheet[Openshift Advanced Cluster Security for Kubernetes]
+- link:https://docs.openshift.com/container-platform/latest/registry/architecture-component-imageregistry.html[Openshift Container Registry]
+- link:https://www.sonarqube.org/[SonarQube]
+- link:https://www.sonatype.com/products/repository-oss?topnav=true[Nexus]
+- link:https://junit.org/junit5/[JUnit]
+- link:https://gogs.io/[Gogs]
+- link:https://tekton.dev/docs/triggers/[Git Webhook]
+- link:https://gatling.io/[Gatling]
+- link:https://www.zaproxy.org/[Zap Proxy]
 
 The script was used to deploy the pipeline can be found link:https://github.com/rcarrata/devsecops-demo/blob/main/bootstrap/install.sh[here].
 The script uses `Ansible 2.7+` and deploy onto `OpenShift 4.7+`
