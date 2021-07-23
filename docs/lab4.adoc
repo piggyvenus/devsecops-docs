@@ -1,0 +1,52 @@
+
+# Lab4: Implementing DevSecOps to Build and Automate Security into the Application in a Secure CI/CD Pipeline
+
+## Goal of Lab 4
+The goal of this lab is to learn how to automate and build security into the application and build a secure software factory that orchestrates a combination of different security tools. With the advent of DevSecOps, security is put front and center - it is addressed in terms of people, processes and technology. Security tools are integrated right into the build process and you could easily break the build if security requirements are not met with the security gates that you build into your CI/CD pipeline.
+
+## Introduction
+
+The benefits of DevOps and Continuous Integration / Continuous Delivery (CI/CD) have been demonstrated with great success over the years. Security was initially treated as a second class citizen in many cases - left until the end usually to much detriment. With the advent of DevSecOps, security is put front and center - it is addressed in terms of people, processes and technology. Security tools are integrated right into the build process and you could easily break the build if security requirements are not met with the security gates that you build into your CI/CD pipeline.
+
+This lab exercise will focus on some of the technologies used to implement automated security compliance controls within a typical CI/CD application pipeline.
+
+A number of tools have been installed and pre-configured to support the DevSecOps pipeline. Most of these tools are running containerized within the Red Hat OpenShift cluster. Here are the pipelines we will be stepping through during our lab:
+
+<img align="center" width="750" src="docs/pics/demo_overview.png">
+
+DevSecOps CICD pipeline demo using several technologies such as:
+
+- [Openshift Pipelines](https://www.openshift.com/learn/topics/ci-cd)
+- [Openshift GitOps](https://www.openshift.com/blog/announcing-openshift-gitops)
+- [Openshift Advanced Cluster Security for Kubernetes](https://www.redhat.com/en/resources/advanced-cluster-security-for-kubernetes-datasheet)
+- [Openshift Container Registry](https://docs.openshift.com/container-platform/latest/registry/architecture-component-imageregistry.html)
+- [SonarQube](https://www.sonarqube.org/)
+- [Nexus](https://www.sonatype.com/products/repository-oss?topnav=true)
+- [JUnit](https://junit.org/junit5/)
+- [Gogs](https://gogs.io/)
+- [Git Webhook](https://tekton.dev/docs/triggers/)
+- [Gatling](https://gatling.io/)
+- [Zap Proxy](https://www.zaproxy.org/)
+
+The script was used to deploy the pipeline can be found link:https://github.com/rcarrata/devsecops-demo/blob/main/bootstrap/install.sh[here].
+The script uses `Ansible 2.7+` and deploy onto `OpenShift 4.7+`
+
+<add description for the flow>
+
+=== Lab 4.1 Logging into the environment
+
+. Go to https://www.opentlc.com/gg/gg.cgi?profile=generic_na_shchan-redhat.com, enter the Activation Key and your email and click submit.
++
+image:images/requestGUID.png[2000,2000]
+. You will be presented with your user id and GUID as shown below.
++
+image:images/guid.png[2000,2000]
+
+. Log in to each of the tools that we previously mentioned  with the credentials shown below. Replace *{GUID}* with your provided lab cluster GUID and replace *{USERID}* with your provided user id - e.g., *user1* . Both the lab cluster GUID and USERID can be found on the Lab Information page where you got your assigned GUID and USERID. (see previous step for more details)
+
+* Red Hat OpenShift console - https://console-openshift-console.apps.cluster-{GUID}.{GUID}.example.opentlc.com
++
+*login:* {USERID}
++
+*password:* openshift
++
