@@ -37,10 +37,10 @@ The script uses `Ansible 2.7+` and deploy onto `OpenShift 4.7+`
 
 . Go to https://www.opentlc.com/gg/gg.cgi?profile=generic_na_shchan-redhat.com, enter the Activation Key and your email and click submit.
 +
-image:images/requestGUID.png[2000,2000]
+image:pics/requestGUID.png[2000,2000]
 . You will be presented with your user id and GUID as shown below.
 +
-image:images/guid.png[2000,2000]
+image:pics/guid.png[2000,2000]
 
 . Log in to each of the tools that we previously mentioned  with the credentials shown below. Replace *{GUID}* with your provided lab cluster GUID and replace *{USERID}* with your provided user id - e.g., *user1* . Both the lab cluster GUID and USERID can be found on the Lab Information page where you got your assigned GUID and USERID. (see previous step for more details)
 
