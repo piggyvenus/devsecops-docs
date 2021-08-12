@@ -28,10 +28,9 @@ DevSecOps CICD pipeline demo using several technologies such as:
 - link:https://gatling.io/[Gatling]
 - link:https://www.zaproxy.org/[Zap Proxy]
 
-The script was used to deploy the pipeline can be found link:https://github.com/rcarrata/devsecops-demo/blob/main/bootstrap/install.sh[here].
+The script was used to deploy the pipeline can be found link:https://raw.githubusercontent.com/rcarrata/devsecops-demo/main/install.sh[here].
 The script uses `Ansible 2.7+` and deploy onto `OpenShift 4.7+`
 
-<add description for the flow>
 
 === Lab 4.1 Logging into the environment
 
@@ -50,3 +49,85 @@ image:pics/guid.png[2000,2000]
 +
 *password:* openshift
 +
+=== Lab 4.2 Execute Dev Pipeline
+. Login OpenShift from terminal via `oc login -u <username> api.cluster-{GUID}.{GUID}.example.opentlc.com:6443`
+. Make sure you have access to the pipeline-build-dev-run.yaml
+. Run: `oc create -f pipeline-build-dev-run.yaml -n cicd`
+. Run: `oc whoami --show-console`
+. Copy the console URL and open the URL from the browser
+. Login the console using your credential
+. Click to `Developer` to switch to developer console
++
+image:pics/dev-console.png[200,200]
+. Make sure you are in the 'cicd' project
++
+image:pics/cicd-proj.png[200,200]
+. Click 'Pipeline' on the left menu to view all pipelines
++
+image:pics/pipeline.png[1000,1000]
+. Click onto PipelineRun (PLR) link
++
+image:pics/plr-details.png[1000,1000]
+. Click onto `source-clone`
++
+image:pics/source-clone.png[200,200]
+. Copy the git repo link from the output of the "source-clone" stage
++
+image:pics/source-git.png[1000,1000]
+. Open a broswer tab with the copied git repo URL
+. It should take you to the gogs git repo as shown below
++
+image:pics/gitrepo.png[1000,1000]
+. Click onto `gogs` and there are 2 repositories for this lab
+. Go back to the OpenShift developer console --> Pipeline --> Pipeline Run
+. Click `dependency-report` and you will see the report location at the end of the output
++
+image:pics/dependency.png[1000,1000]
+. Click `Search` on the left nav menu
+. Type 'route' and click route from the list
++
+image:pics/show-routes.png[1000,1000]
+. Click on the reports repo link
++
+image:pics/report-route.png[1000,1000]
+. Click onto the `petclinic-build` link from the page
++
+image:pics/pet-report.png[1000,1000]
+. Continue to click on spring-petclinic -> target -> site
+. Click on the `Dependencies` from the page
++
+image:pics/petclinic-site.png[1000,1000]
+. You may examine the details from that page by scrolling down
+. Go back to the OpenShift developer console --> Pipeline --> Pipeline Run
+. Click on the stage `unit-tests`
+. Check if the build completed successfully based on the output
++
+image:pics/build-image.png[1000,1000]
+. Click on `code-analysis` and you can see the analysis was created per the output of the stage
++
+image:pics/code-analysis.png[1000,1000]
+. Click `search` and go to the list of routes
+. Click the sonarqube link from the list
++
+image:pics/sonar-link.png[500,500]
+. Click on the link to access sonarqube
++
+image:pics/sonar1.png[1000,1000]
+. Click `1` above project -> click `petclinic`
+. You will see the overview of the project's health
++
+image:pics/sonar2.png[1000,1000]
+. Click `1h5min debt` to view all the technical debt
++
+image:pics/sonar3.png[1000,1000]
+. You may explore other information on this page
+. Click `release-app` and you can see the nexus repo information
++
+image:pics/release-app.png[1000,1000]
+. Go back to the route list and click onto the Nexus Repo like
+. Click browse -> click `maven-snapshot` and look for the new built
++
+image:pics/nexus1.png[1000,1000]
+. Next, go back the pipeline run and example the build image and you should see the image was build and push to the internal image repository
++
+image:pics/pet-image.png[1000,1000]
