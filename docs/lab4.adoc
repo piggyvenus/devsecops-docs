@@ -36,10 +36,10 @@ The script uses `Ansible 2.7+` and deploy onto `OpenShift 4.7+`
 
 . Go to https://www.opentlc.com/gg/gg.cgi?profile=generic_na_shchan-redhat.com, enter the Activation Key and your email and click submit.
 +
-image:pics/requestGUID.png[2000,2000]
+image:pics/requestGUID.png[800,800]
 . You will be presented with your user id and GUID as shown below.
 +
-image:pics/guid.png[2000,2000]
+image:pics/guid.png[800,800]
 
 . Log in to each of the tools that we previously mentioned  with the credentials shown below. Replace *{GUID}* with your provided lab cluster GUID and replace *{USERID}* with your provided user id - e.g., *user1* . Both the lab cluster GUID and USERID can be found on the Lab Information page where you got your assigned GUID and USERID. (see previous step for more details)
 
@@ -64,70 +64,70 @@ image:pics/dev-console.png[200,200]
 image:pics/cicd-proj.png[200,200]
 . Click 'Pipeline' on the left menu to view all pipelines
 +
-image:pics/pipeline.png[1000,1000]
+image:pics/pipeline.png[800,800]
 . Click onto PipelineRun (PLR) link
 +
-image:pics/plr-details.png[1000,1000]
+image:pics/plr-details.png[800,800]
 . Click onto `source-clone`
 +
 image:pics/source-clone.png[200,200]
 . Copy the git repo link from the output of the "source-clone" stage
 +
-image:pics/source-git.png[1000,1000]
+image:pics/source-git.png[800,800]
 . Open a broswer tab with the copied git repo URL
 . It should take you to the gogs git repo as shown below
 +
-image:pics/gitrepo.png[1000,1000]
+image:pics/gitrepo.png[800,800]
 . Click onto `gogs` and there are 2 repositories for this lab
 . Go back to the OpenShift developer console --> Pipeline --> Pipeline Run
 . Click `dependency-report` and you will see the report location at the end of the output
 +
-image:pics/dependency.png[1000,1000]
+image:pics/dependency.png[800,800]
 . Click `Search` on the left nav menu
 . Type 'route' and click route from the list
 +
-image:pics/show-routes.png[1000,1000]
+image:pics/show-routes.png[800,800]
 . Click on the reports repo link
 +
-image:pics/report-route.png[1000,1000]
+image:pics/report-route.png[800,800]
 . Click onto the `petclinic-build` link from the page
 +
-image:pics/pet-report.png[1000,1000]
+image:pics/pet-report.png[800,800]
 . Continue to click on spring-petclinic -> target -> site
 . Click on the `Dependencies` from the page
 +
-image:pics/petclinic-site.png[1000,1000]
+image:pics/petclinic-site.png[800,800]
 . You may examine the details from that page by scrolling down
 . Go back to the OpenShift developer console --> Pipeline --> Pipeline Run
 . Click on the stage `unit-tests`
 . Check if the build completed successfully based on the output
 +
-image:pics/build-image.png[1000,1000]
+image:pics/build-image.png[800,800]
 . Click on `code-analysis` and you can see the analysis was created per the output of the stage
 +
-image:pics/code-analysis.png[1000,1000]
+image:pics/code-analysis.png[800,800]
 . Click `search` and go to the list of routes
 . Click the sonarqube link from the list
 +
 image:pics/sonar-link.png[500,500]
 . Click on the link to access sonarqube
 +
-image:pics/sonar1.png[1000,1000]
+image:pics/sonar1.png[800,800]
 . Click `1` above project -> click `petclinic`
 . You will see the overview of the project's health
 +
-image:pics/sonar2.png[1000,1000]
+image:pics/sonar2.png[800,800]
 . Click `1h5min debt` to view all the technical debt
 +
-image:pics/sonar3.png[1000,1000]
+image:pics/sonar3.png[800,800]
 . You may explore other information on this page
 . Click `release-app` and you can see the nexus repo information
 +
-image:pics/release-app.png[1000,1000]
+image:pics/release-app.png[800,800]
 . Go back to the route list and click onto the Nexus Repo like
 . Click browse -> click `maven-snapshot` and look for the new built
 +
-image:pics/nexus1.png[1000,1000]
+image:pics/nexus1.png[800,800]
 . Next, go back the pipeline run and example the build image and you should see the image was build and push to the internal image repository
 +
-image:pics/pet-image.png[1000,1000]
+image:pics/pet-image.png[800,800]
